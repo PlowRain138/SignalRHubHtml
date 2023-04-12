@@ -22,7 +22,8 @@
                console.info(chat);  
                $.connection.hub.start().done(function () {
                 var myNumber = document.getElementById("myNumber").value;
-                chat.server.setUserId(myNumber);
+                var myType = document.getElementById("myType").value;
+                chat.server.setUserId(myNumber , myType);
           
            });
              }; 
@@ -63,9 +64,9 @@
                     
   //訊息傳完會觸發 伺服器的method "sendto"
   
-  //sendto 會呼叫自己跟對方網頁的function，總共三個 showMessage(int id ,msg) showLastMsg() showIconUnRead()
+  //sendto 會呼叫自己跟對方網頁的function，總共三個 showMessage(int id ,msg , userType) showLastMsg() showIconUnRead()
   
-  //showMessage(id , msg) 會渲染聊天室訊息 EX
+  //showMessage(id , msg , userType) 會渲染聊天室訊息 EX
   
   //我的id為1的話 ,對方為2的話
   
